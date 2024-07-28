@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import "./styles.css";
 
@@ -8,7 +8,7 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  async function fetchImage(getUrl) {
+  const fetchImage = useCallback(async (getUrl) => {
     try {
       setLoading(true);
 
@@ -23,7 +23,7 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
       setErrorMsg(e.message);
       setLoading(false);
     }
-  }
+  }, [page, limit]);
 
   function handlePrevious() {
     setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
@@ -35,7 +35,7 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
 
   useEffect(() => {
     if (url !== "") fetchImage(url);
-  }, [url]);
+  }, [url, fetchImage]);
 
   if (loading) {
     return <div>Loading data ! Please wait</div>;
