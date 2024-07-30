@@ -24,10 +24,10 @@ export default function LoadMoreData() {
             setLoading(false);
         }
     }
-    // eslint-disable-next-line
+
     useEffect(() => {
         fetchProducts();
-    }, [count]);
+    }, );
 
     useEffect(() => {
         if(products && products.length === 100) setDisableButton(true);
