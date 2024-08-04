@@ -1,0 +1,28 @@
+/* styles.css */
+.search-autocomplete-container {
+    position: relative;
+    width: 300px;
+}
+
+.suggestion-list {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestion-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-list li:hover {
+    background-color: #f0f0f0;
+}
