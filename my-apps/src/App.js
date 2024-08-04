@@ -11,6 +11,7 @@ import LightDarkMode from './components/light-dark-mode';
 import ScrollIndicator from './components/scroll-indicator';
 import ModalTest from './components/custom-modal-popup/modal-test';
 import GithubProfileFinder from './components/github-profile-finder';
+import SearchAutocomplete from './components/search-autocomplete';
 function App() {
   return (
     <div className="App">
@@ -27,8 +28,9 @@ function App() {
       {/* <QRCodeGenrator />
       <LightDarkMode />
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
-      <ModalTest />
-      <GithubProfileFinder />
+      {/* <ModalTest />
+      <GithubProfileFinder /> */}
+      <SearchAutocomplete />
     </div>
   )
 }
